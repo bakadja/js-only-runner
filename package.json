@@ -1,0 +1,32 @@
+{
+  "name": "js-only-runner",
+  "displayName": "JS Only Runner",
+  "description": "Run the current JavaScript file with Node.js.",
+  "version": "0.0.1",
+  "publisher": "baki",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jsOnlyRunner.runCurrentFile",
+        "title": "Run JavaScript File",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "jsOnlyRunner.runCurrentFile",
+          "when": "resourceLangId == javascript && resourceScheme == file",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  }
+}
